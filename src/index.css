@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+@theme {
+  /* Font Families */
+  /* Font Families */
+  --font-display: "Roboto", sans-serif;
+  --font-body: "Roboto", sans-serif;
+
+  /* Brand Colors */
+  --color-background: #f2eded;
+  --color-background-white: #FAF9F6;
+  
+  /* --color-primary: #4169E1; */
+  /* Royal Blue */
+  --color-muted: #d7d6ec;
+  --color-primary-muted: #304fad;
+  /* Royal Blue (Muted) */
+  --color-secondary: #4CAF50;
+  /* ERP Green */
+  --color-accent: #d82f5a;
+  /* ERP Orange */
+  --color-dark: #1e2939;
+  /* Dark Mode Background */
+
+  /* Text Colors */
+  --color-primary-text: #575252;
+  --color-secondary-text: #7d7878;
+  /* ---secondary-text: #93a1a1;  */
+
+  --color-primary-text-inverse: #FFFFFF;
+  /* Dark Gray (Headings) */
+  /* Medium Gray (Body) */
+  --color-text-muted: #718096;
+  /* Light Gray (Hints) */
+  /* White Text */
+
+  /* Status Colors */
+  --color-success: #22C55E;
+  /* Success Green */
+  --color-error: #EF4444;
+  /* Error Red */
+  --color-warning: #FACC15;
+  /* Warning Yellow */
+  --color-info: #3B82F6;
+  /* Info Blue */
+
+
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* Borders */
+  --border-radius-sm: 0.25rem;
+  /* 4px */
+  --border-radius-md: 0.5rem;
+  /* 8px */
+  --border-radius-lg: 1rem;
+  /* 16px */
+
+  /* Transitions */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layout */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-3xl: 120rem;
+
+  /* Z-Index */
+  --z-index-overlay: 999;
+  --z-index-modal: 1000;
+  --z-index-tooltip: 1100;
+
+}
+
+
+body {
+  font-family: var(--font-body);
+}
+
+
+
+
+.dark {
+  /* Solarized-Inspired Dark Colors */
+  --base-background: #002b36;
+  /* Dark cyan (Base03) */
+  --base-primary-text: #282828;
+  /* Light cyan (Base0) */
+  --base-secondary-text: #93a1a1;
+  /* Base1 */
+  --base-accent: #073642;
+  /* Magenta (for highlights) */
+  --base-muted: #073642;
+  /* Darker background (Base02) */
+
+  /* Semantic Aliases */
+  --color-background: var(--base-background);
+  --color-primary-text: var(--base-primary-text);
+  --color-secondary-text: var(--base-secondary-text);
+  --color-accent: var(--base-accent);
+  --color-muted: var(--base-muted);
+}
+
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--color-accent);
+  /* Scrollbar Track */
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bg-accent);
+  /* Scrollbar Thumb */
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-accent-dark);
+  /* Hover Color */
+}
