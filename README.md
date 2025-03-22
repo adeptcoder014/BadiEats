@@ -24,21 +24,6 @@ Micro Frontends decompose a monolithic frontend into **independent, modular appl
 
 ---
 
-## 🏗️ Project Structure
-
-```
-BadiEats/
-├── apps/
-│   ├── customer/          # Customer-facing module
-│   ├── restaurant-admin/  # Restaurant management module
-│   ├── delivery-partner/  # Delivery tracking and management
-│   └── core/              # Shared utilities and libraries
-├── config/                # Environment settings and configuration
-├── public/                # Static assets (logos, images)
-└── README.md              # Project documentation
-```
-
----
 
 ## 🚀 Key Features
 
@@ -75,7 +60,7 @@ Create a `.env` file in the root directory:
 ```env
 MYSQL_HOST=localhost
 MYSQL_PORT=3306
-MYSQL_USER=root
+MYSQL_USER=root 
 MYSQL_PASS=yourpassword
 MYSQL_DB=badi_eats
 JWT_SECRET=your_jwt_secret
