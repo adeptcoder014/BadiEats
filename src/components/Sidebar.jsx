@@ -6,6 +6,7 @@ import {
 } from 'react-icons/hi';
 // import { HiOutlineMenuAlt2, HiX } from "react-icons/hi";
 import { TbLayoutSidebarRightExpand } from "react-icons/tb";
+
 import Loader from './ui/status/Loader';
 import ConfirmationDialogueBox from './ui/status/Confirmation';
 
@@ -107,15 +108,15 @@ const ErpSidebar = (props) => {
         {/* Logo and Name in One Row */}
         <div className="flex items-center gap-4 mb-2">
           <img
-            src="/logo.jpeg"
+            src="/logo.png"
             alt="Badi Dukaan Logo"
-            className="w-12 h-12 rounded-full border-4 border-accent shadow-md"
+            className="w-16 h-16 p-1 rounded-full border-4  border-accent shadow-md"
           />
           <p style={{
             fontSize: 'var(--text-2xl)', color: 'var(--color-primary-text)',
           }}
             className="font-bold text-primary-text ">
-            Badi Dukaan
+            Badi Eats
           </p>
         </div>
 

@@ -4,100 +4,67 @@
 
 @theme {
   /* Font Families */
-  /* Font Families */
-  --font-display: "Roboto", sans-serif;
-  --font-body: "Roboto", sans-serif;
+  --font-display: "Poppins", sans-serif; /* Modern and friendly */
+  --font-body: "Poppins", sans-serif;
 
-  /* Brand Colors */
-  --color-background: #f2eded;
-  --color-background-white: #FAF9F6;
-  
-  /* --color-primary: #4169E1; */
-  /* Royal Blue */
-  --color-muted: #d7d6ec;
-  --color-primary-muted: #304fad;
-  /* Royal Blue (Muted) */
-  --color-secondary: #4CAF50;
-  /* ERP Green */
-  --color-accent: #d82f5a;
-  /* ERP Orange */
-  --color-dark: #1e2939;
-  /* Dark Mode Background */
+  /* Brand Colors (Food Delivery Theme) */
+  --color-background: #fbd9c8; /* Warm and inviting */
+  --color-background-section: #FFFFFF; /* Pure white */
+
+  --color-primary: #FF4500; /* Vibrant Orange (Call-to-action) */
+  --color-primary-muted: #FF6F3C; /* Softer Orange (Hover/Muted) */
+
+  --color-secondary: #32CD32; /* Fresh Green (Healthy Vibes) */
+  --color-accent: #f0303e; /* Golden Yellow (Highlights) */
+  --color-dark: #2D2D2D; /* Deep Grey (Text and Dark Mode) */
 
   /* Text Colors */
-  --color-primary-text: #575252;
-  --color-secondary-text: #7d7878;
-  /* ---secondary-text: #93a1a1;  */
+  --color-primary-text: #4A4A4A; /* Dark Grey (Readable Body) */
+  --color-secondary-text: #6D6D6D; /* Light Grey (Subtext) */
 
-  --color-primary-text-inverse: #FFFFFF;
-  /* Dark Gray (Headings) */
-  /* Medium Gray (Body) */
-  --color-text-muted: #718096;
-  /* Light Gray (Hints) */
-  /* White Text */
+  --color-primary-text-inverse: #FFFFFF; /* For dark backgrounds */
+  --color-text-muted: #9E9E9E; /* Muted grey text for hints */
 
   /* Status Colors */
-  --color-success: #22C55E;
-  /* Success Green */
-  --color-error: #EF4444;
-  /* Error Red */
-  --color-warning: #FACC15;
-  /* Warning Yellow */
-  --color-info: #3B82F6;
-  /* Info Blue */
-
-
+  --color-success: #00C853; /* Bright Green (Order Success) */
+  --color-error: #D32F2F; /* Red (Order Failure/Error) */
+  --color-warning: #FF9800; /* Orange (Caution) */
+  --color-info: #2196F3; /* Blue (Information) */
 
   /* Font Sizes */
-  --text-xs: 0.75rem;
-  /* 12px */
-  --text-sm: 0.875rem;
-  /* 14px */
-  --text-base: 1rem;
-  /* 16px */
-  --text-lg: 1.125rem;
-  /* 18px */
-  --text-xl: 1.25rem;
-  /* 20px */
-  --text-2xl: 1.5rem;
-  /* 24px */
-  --text-3xl: 1.875rem;
-  /* 30px */
-  --text-4xl: 2.25rem;
-  /* 36px */
-  --text-5xl: 3rem;
-  /* 48px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.5rem; /* 24px (Feature Headers) */
+  --text-2xl: 2rem; /* 32px (Section Headers) */
+  --text-3xl: 2.5rem; /* 40px (Hero Headline) */
 
+  /* Shadows (Soft and subtle) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  /* Borders (Rounded for modern UX) */
+  --border-radius-sm: 0.375rem; /* 6px */
+  --border-radius-md: 0.75rem; /* 12px */
+  --border-radius-lg: 1.5rem; /* 24px */
 
-  /* Borders */
-  --border-radius-sm: 0.25rem;
-  /* 4px */
-  --border-radius-md: 0.5rem;
-  /* 8px */
-  --border-radius-lg: 1rem;
-  /* 16px */
-
-  /* Transitions */
+  /* Transitions (Smooth interactions) */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 
-  /* Layout */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-3xl: 120rem;
+  /* Layout (Responsive Breakpoints) */
+  --breakpoint-sm: 640px; /* Small Screens */
+  --breakpoint-md: 768px; /* Tablets */
+  --breakpoint-lg: 1024px; /* Laptops */
+  --breakpoint-xl: 1280px; /* Desktops */
+  --breakpoint-3xl: 1440px; /* Large Screens */
 
-  /* Z-Index */
+  /* Z-Index (Layering UI Elements) */
   --z-index-overlay: 999;
   --z-index-modal: 1000;
   --z-index-tooltip: 1100;
-
 }
 
 
@@ -110,13 +77,15 @@ body {
 
 .dark {
   /* Solarized-Inspired Dark Colors */
-  --base-background: #002b36;
+  --base-background: #171717;
+  --color-background-section: #212121; /* Pure white */
+
   /* Dark cyan (Base03) */
-  --base-primary-text: #282828;
+  --base-primary-text: #cfcfcf;
   /* Light cyan (Base0) */
   --base-secondary-text: #93a1a1;
   /* Base1 */
-  --base-accent: #073642;
+  --base-accent: #f0303e;
   /* Magenta (for highlights) */
   --base-muted: #073642;
   /* Darker background (Base02) */

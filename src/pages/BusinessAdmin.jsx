@@ -1,6 +1,15 @@
 import { GrDashboard } from 'react-icons/gr';
+import { FaUsers } from "react-icons/fa";
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+import { MdOutlineInventory } from "react-icons/md";
+import { MdOutlinePendingActions } from "react-icons/md";
+
 import { HiChevronRight } from 'react-icons/hi';
 import Table from '../components/ui/tables/Table';
+import DetailedTable from '../components/ui/tables/DetailedTable';
+import EditableTable from '../components/ui/tables/EditableTable';
+import EnhancedEditableTable from '../components/ui/tables/EnhancedEditableTable';
+import EditableTableWithModal from '../components/ui/tables/EditableTableWithModal';
 const Breadcrumbs = ({ items }) => (
   <nav aria-label="breadcrumb" className="mb-8">
     <ol className="flex items-center space-x-4">
@@ -42,7 +51,28 @@ const BusinessAdmins = () => {
 
   const data = [
     { name: 'Apple MacBook Pro 17"', color: 'Silver', category: 'Laptop', price: '$2999' },
+    { name: 'Apple MacBook Pro 17"', color: 'Silver', category: 'Laptop', price: '$2999' },
+    { name: 'Apple MacBook Pro 17"', color: 'Silver', category: 'Laptop', price: '$2999' },
+    { name: 'Apple MacBook Pro 17"', color: 'Silver', category: 'Laptop', price: '$2999' },
     { name: 'Microsoft Surface Pro', color: 'White', category: 'Laptop PC', price: '$1999' },
+    { name: 'Microsoft Surface Pro', color: 'White', category: 'Laptop PC', price: '$1999' },
+    { name: 'Microsoft Surface Pro', color: 'White', category: 'Laptop PC', price: '$1999' },
+    { name: 'Microsoft Surface Pro', color: 'White', category: 'Laptop PC', price: '$1999' },
+    { name: 'Microsoft Surface Pro', color: 'White', category: 'Laptop PC', price: '$1999' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
+    { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
     { name: 'Magic Mouse 2', color: 'Black', category: 'Accessories', price: '$99' },
   ];
   return (
@@ -53,32 +83,38 @@ const BusinessAdmins = () => {
         <Breadcrumbs items={breadcrumbs} />
 
         {/* Header Section */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-14">
           <h1 className="text-xl font-semibold">Dashbodddard</h1>
-          <button className="px-4 py-2 bg-[var(--color-accent)] text-primary-text-inverse font-bold rounded-lg hover:bg-white hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]">
+          {/* <button className="px-4 py-2 bg-[var(--color-accent)] text-primary-text-inverse font-bold rounded-lg hover:bg-white hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]">
             + Add New
-          </button>
+          </button> */}
         </div>
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-4 bg-white shadow rounded-lg">
-            <h2 className="text-lg font-medium">Total Users</h2>
-            <p className="text-2xl font-bold">1,24ss5</p>
-          </div>
-          <div className="p-4 bg-white shadow rounded-lg">
-            <h2 className="text-lg font-medium">Revenue</h2>
-            <p className="text-2xl font-bold">$45,120</p>
-          </div>
-          <div className="p-4 bg-white shadow rounded-lg">
-            <h2 className="text-lg font-medium">Orders</h2>
-            <p className="text-2xl font-bold">320</p>
-          </div>
-          <div className="p-4 bg-white shadow rounded-lg">
-            <h2 className="text-lg font-medium">Pending Requests</h2>
-            <p className="text-2xl font-bold">15</p>
-          </div>
+          {[
+            { title: "Total Users", value: "1,245", icon: <FaUsers />, bg: "bg-blue-100" },
+            { title: "Revenue", value: "$45,120", icon: <FaMoneyBillTrendUp />, bg: "bg-green-100" },
+            { title: "Orders", value: "320", icon: <MdOutlineInventory />, bg: "bg-yellow-100" },
+            { title: "Pending Requests", value: "15", icon: <MdOutlinePendingActions />, bg: "bg-red-100" },
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className={`p-6 ${stat.bg} shadow-md rounded-2xl transition-transform transform hover:scale-105`}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-medium text-[var(--color-text-primary)]">
+                  {stat.title}
+                </h2>
+                <div className="text-[var(--color-accent)] text-2xl">{stat.icon}</div>
+              </div>
+              <p className="text-3xl font-extrabold text-[var(--color-text-primary)]">
+                {stat.value}
+              </p>
+            </div>
+          ))}
         </div>
+
 
         {/* Two-Column Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -101,14 +137,21 @@ const BusinessAdmins = () => {
           </div>
         </div>
 
-            <Table columns={columns} data={data} />
-        {/* Full-Width Section */}
-        {/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full sm:max-w-2xs md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl">
-          <div className="p-6 bg-black sm:bg-accent md:bg-blue-200 lg:bg-green-200 xl:bg-yellow-200 2xl:bg-red-200 shadow rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">Performance Overview</h2>
-            <p>Placeholder for charts or detailed data tables.</p>
+        {/* <Table columns={columns} data={data} /> */}
+        {/* <DetailedTable columns={columns} data={data} /> */}
+        {/* <EditableTable columns={columns} data={data} /> */}
+        {/* <EnhancedEditableTable columns={columns} data={data} /> */}
+        <div className="hidden md:block">
+          <EditableTableWithModal columns={columns} data={data} />
+        </div>
+                {/* Full-Width Section */}
+        <div className="block lg:hidden relative overflow-x-auto shadow-md sm:rounded-lg w-full sm:max-w-2xs md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl">
+          <div className="p-0 sm:p-4 bg-background-section sm:bg-accent md:bg-blue-200 lg:bg-green-200 xl:bg-yellow-200 2xl:bg-red-200 shadow rounded-lg">
+            <h2 className="text-xl font-semibold mb-4">Data Overview</h2>
+            {/* <p>Placeholder for charts or detailed data tables.</p> */}
+            <EditableTableWithModal columns={columns} data={data} />
           </div>
-        </div> */}
+        </div>
       </div>
     </main>
   );

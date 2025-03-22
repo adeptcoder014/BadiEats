@@ -2,13 +2,12 @@ import { useState } from "react";
 import { CiSquareCheck } from "react-icons/ci";
 
 const themes = [
-
-  { id: "dark", name: "Dark" },
-  { id: "light", name: "Light" },
+  { id: "dark", name: "Dark", color: "#1E293B" },
+  { id: "light", name: "Light", color: "#FFFFFF" },
 ];
 
 export default function ThemeSelector() {
-  const [selectedTheme, setSelectedTheme] = useState("erp");
+  const [selectedTheme, setSelectedTheme] = useState("light");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleThemeChange = (theme) => {
@@ -18,26 +17,35 @@ export default function ThemeSelector() {
   };
 
   return (
-    <div className="relative w-64 ">
+    <div className="relative w-72">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center bg-white text-text-muted py-2 px-4 rounded-lg shadow-sm  transition-all"
+        className="w-full flex justify-between items-center bg-white text-gray-700 py-3 px-4 rounded-xl shadow-lg transition-all hover:bg-gray-100 focus:outline-none"
       >
-        <span>{themes.find((t) => t.id === selectedTheme)?.name}</span>
-        <CiSquareCheck size={20} />
+        <span>{themes.find((t) => t.id === selectedTheme)?.name} Theme</span>
+        <CiSquareCheck size={24} />
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-full bg-white rounded-lg shadow-xl border border-[var(--color-muted)] z-[var(--z-index-overlay)] overflow-hidden">
+        <div className="absolute mt-3 w-full bg-white rounded-xl shadow-xl border border-gray-200 z-[var(--z-index-overlay)] overflow-hidden">
           {themes.map((theme) => (
             <button
               key={theme.id}
               onClick={() => handleThemeChange(theme.id)}
-              className={`flex items-center justify-between w-full text-left px-4 py-3 hover:bg-[var(--color-neutral-200)] transition-colors ${selectedTheme === theme.id ? "font-semibold text-[var(--color-primary)]" : "text-gray-700"
-                }`}
+              className={`flex items-center justify-between w-full text-left px-6 py-4 transition-all ${
+                selectedTheme === theme.id
+                  ? "bg-gray-200 font-semibold text-[var(--color-primary)]"
+                  : "hover:bg-gray-100 text-gray-800"
+              }`}
             >
-              {theme.name}
-              {selectedTheme === theme.id && <CiSquareCheck size={16} />}
+              <div className="flex items-center gap-4">
+                <span
+                  className="w-6 h-6 rounded-full border"
+                  style={{ backgroundColor: theme.color }}
+                ></span>
+                {theme.name}
+              </div>
+              {selectedTheme === theme.id && <CiSquareCheck size={20} />}
             </button>
           ))}
         </div>

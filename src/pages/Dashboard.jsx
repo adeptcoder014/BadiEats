@@ -34,7 +34,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <main className="rounded-lg text-[var(--color-text-primary)] p-6 bg-[var(--color-neutral-100)] flex-1 overflow-y-auto flex justify-center items-start">
+    <main className="rounded-lg text-[var(--color-text-primary)] p-6 bg-background-section flex-1 overflow-y-auto flex justify-center items-start">
       <div className="w-full max-w-6xl space-y-6">
 
         {/* Breadcrumbs */}

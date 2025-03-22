@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { HiOutlineBell } from 'react-icons/hi';
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
-import ThemeSelector from './ui/ThemeToggle';
+// import ThemeSelector from './ui/ThemeToggle';
 import { FaSearch } from "react-icons/fa";
+import ThemeSelector from './ui/drawer/Drawer';
 //============================================================
 const Navbar = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +27,7 @@ const Navbar = (props) => {
         {/* Logo */}
         {!props.isSidebarOpen ? <a href="/" className="flex items-center space-x-3">
           <img
-            src="logo.jpeg"
+            src="logo.png"
             className="w-12 h-12 rounded-full"
             alt="Logo"
           />
@@ -34,7 +35,7 @@ const Navbar = (props) => {
             fontSize: 'var(--text-2xl)', color: 'var(--color-primary-text)',
           }}
             className="font-bold text-primary-text ">
-            Badi Dukaan
+            Badi Eats
           </p>        </a> : null}
 
         {/* Search Bar */}
@@ -49,13 +50,15 @@ const Navbar = (props) => {
             className=" p-3 pl-14 border  rounded-2xl bg-white text-white placeholder-gray-400 shadow-sm focus:ring-4 focus:ring-secondary focus:outline-none transition-all duration-300 hover:border-gray-400 w-full"
           />
         </div>
-        <ThemeSelector />
+        {/* <ThemeSelector /> */}
         {/* Icons and Profile */}
         <div className="flex items-center space-x-6">
           {/* Bell Icon */}
+          <ThemeSelector />
+
           <button className="relative focus:outline-none ">
             <HiOutlineBell size={24} className="p-2 rounded-full shadow-md bg-accent text-primary-text-inverse  hover:bg-accent/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent/50 w-10 h-10 mb-4"
-               />
+            />
             <span className="absolute -top-2 -right-1  bg-red-500 text-white text-xs rounded-full px-1">
               3
             </span>

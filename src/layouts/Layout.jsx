@@ -61,7 +61,7 @@ export default function Layout({ children }) {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         {/* Main Content Area */}
-        <main className="flex-1 p-6 bg-muted overflow-y-auto">
+        <main className="flex-1  bg-muted overflow-y-auto">
           {/* <ContentArea /> */}
 
           {children}
